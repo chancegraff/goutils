@@ -6,12 +6,10 @@ import (
 )
 
 // RequestBody returns the body from a request
-func RequestBody(rq *http.Request) (interface{}, error) {
-	// Decode body
-	var i interface{}
+func RequestBody(i *interface{}, rq *http.Request) error {
 	err := json.NewDecoder(rq.Body).Decode(&i)
 	if err != nil {
-		return nil, err
+		return err
 	}
-	return i, nil
+	return nil
 }
