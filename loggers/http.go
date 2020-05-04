@@ -16,9 +16,7 @@ type HTTPLogger struct {
 
 // NewHTTPLogger creates a new logger
 func NewHTTPLogger(name string, wt *http.ResponseWriter) HTTPLogger {
-	(*wt).Header().Set("Content-Type", "text/html; charset=utf-8")
-	(*wt).Header().Set("Access-Control-Allow-Origin", "*")
-	(*wt).Header().Set("Access-Control-Allow-Headers", "X-Token-Auth")
+	(*wt).Header().Set("Content-Type", "application/json; charset=utf-8")
 
 	return HTTPLogger{
 		name: name,
